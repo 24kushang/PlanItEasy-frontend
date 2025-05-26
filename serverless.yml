@@ -1,0 +1,20 @@
+service: vite-frontend-deploy
+
+app: vite-app
+# org: your-serverless-org-name  # Optional if not using Serverless Dashboard
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+
+plugins:
+  - serverless-finch
+
+custom:
+  client:
+    bucketName: vite-app-bucket-12345  # Choose a unique name
+    distributionFolder: dist
+    indexDocument: index.html
+    errorDocument: index.html  # For SPA routing
+    region: ap-south-1
