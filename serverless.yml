@@ -1,20 +1,18 @@
-service: vite-frontend-deploy
-
-app: vite-app
-# org: your-serverless-org-name  # Optional if not using Serverless Dashboard
+org: planiteasy
+app: planiteasy
+service: plan-it-easy-frontend
 
 provider:
   name: aws
   runtime: nodejs18.x
-  region: us-east-1
-
+  region: ap-south-1
 plugins:
   - serverless-finch
 
 custom:
   client:
-    bucketName: vite-app-bucket-12345  # Choose a unique name
+    bucketName: plan-it-easy-frontend-2411  # Choose a unique name
     distributionFolder: dist
     indexDocument: index.html
-    errorDocument: index.html  # For SPA routing
+    errorDocument: index.html
     region: ap-south-1

@@ -47,7 +47,7 @@ export default function App() {
   const [editId, setEditId] = useState(null);
 
   // Replace with your actual API Gateway endpoint
-  const API_URL = "https://jflo8rhv52.execute-api.ap-south-1.amazonaws.com";
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const onSubmit = async (data) => {
     // Adapt form data to API format
@@ -150,6 +150,7 @@ export default function App() {
   }, [confirmEditOpen, editId, items, setValueEdit, resetEdit]);
 
   useEffect(() => {
+    console.log(API_URL);
     fetchItems();
   }, []);
 
